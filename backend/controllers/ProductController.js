@@ -71,23 +71,30 @@ module.exports = {
     },
 
     async deleteProduct(req, res) {
-        try {
-            const { productId } = req.params;
+        const { productId } = req.params;
 
+        try {
             if (!productId) {
                 return res.status(500).json({
+                    id: productId,
                     message: 'Informações incompletas.'
                 });
             } else {
-                await Product.destroy(productId);
+                await Product.destroy({
+                    where: {
+                        id: productId
+                    }
+                });
 
                 return res.status(200).json({
+                    id: productId,
                     message: 'Produto deletado com sucesso.'
                 });
             }
         } catch (error) {
             res.status(500).json({
                 message: 'Erro ao deletar produto.',
+                id: productId,
                 error: error
             });
         }
