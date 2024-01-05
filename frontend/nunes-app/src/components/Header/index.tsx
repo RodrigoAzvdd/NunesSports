@@ -15,7 +15,7 @@ export default function Header() {
                 />
             </div>
             <ul className={styles.menu}>
-                <Link href={'/'} className={styles.menuItem}>Ver Produtos</Link>
+                <Link href={'/'} className={styles.menuItem}>Produtos</Link>
                 <Link href={'/newProduct'} className={styles.menuItem}>Cadastrar Produto</Link>
             </ul>
             <p className={styles.github}>Feito por <a target='_blank' href='https://github.com/RodrigoAzvdd' className={styles.githubName}>Rodrigo Azevedo</a></p>

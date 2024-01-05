@@ -3,6 +3,7 @@
 import styles from './page.module.css';
 import ProductForm from "@/components/ProductForm";
 import axios from "axios";
+import Link from 'next/link';
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -30,6 +31,7 @@ export default function Page() {
 
     return (
         <section className={styles.mainContent}>
+            <Link className={styles.backToMenu} href={'/'}>Voltar</Link>
             <h1 className={styles.title}>&quot;Atualizar Produto&quot;</h1>
             <ProductForm
                 name={product?.name}

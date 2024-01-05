@@ -50,6 +50,9 @@
     color: #fff;
 }
 
-.noProdMessage {
-    text-align: center;
+.noItemSpan {
+    position: absolute;
+    left: 45%;
+    top: 20%;
+    font-size: 2rem;
 }

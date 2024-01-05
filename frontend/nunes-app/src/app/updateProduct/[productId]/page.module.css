@@ -12,3 +12,22 @@
     color: #ae95f5;
     text-transform: uppercase;
 }
+
+.backToMenu {
+    position: fixed;
+    top: 5%;
+    left: 20%;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    background-color: #7645ff;
+    color: #fff;
+    font-weight: 600;
+    border-radius: .5rem;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.backToMenu:hover {
+    box-shadow: 2px 2px 5px #bebebe;
+    transform: scale(1.05);
+}

@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import Link from 'next/link';
+import InfoToast from '../InfoToast';
 
 interface Product {
     id: number,
@@ -14,10 +15,15 @@ interface Product {
 
 export default function ProductsTable() {
 
+    const [toastIsOpen, setToastIsOpen] = useState(false)
     const [products, setProducts] = useState<Product[]>([])
 
     const deleteProduct = async (productId: number) => {
         await axios.delete(`http://localhost:3300/products/${productId}`)
+        setToastIsOpen(true)
+        setTimeout(() => {
+            setToastIsOpen(false)
+        }, 3000);
         setProducts((prevProducts) =>
             prevProducts.filter((product) => product.id !== productId)
         );
@@ -51,21 +57,24 @@ export default function ProductsTable() {
                 </tr>
             </thead>
             <tbody>
-                {products.map((product) => (
-                    <tr key={product.id}>
-                        <td>{product.id}</td>
-                        <td>{product.name}</td>
-                        <td>{product.description}</td>
-                        <td>R$ {product.price.toFixed(2)}</td>
-                        <td className={styles.actions}>
-                            <p onClick={() => {
-                                deleteProduct(product.id)
-                            }} className={styles.deleteBtn}>Deletar</p>
-                            <Link href={`/updateProduct/${product.id}`} className={styles.updateBtn}>Atualizar</Link>
-                        </td>
-                    </tr>
-                ))}
+                {
+                    products.map((product) => (
+                        <tr key={product.id}>
+                            <td>{product.id}</td>
+                            <td>{product.name}</td>
+                            <td>{product.description}</td>
+                            <td>R$ {product.price.toFixed(2)}</td>
+                            <td className={styles.actions}>
+                                <p onClick={() => {
+                                    deleteProduct(product.id)
+                                }} className={styles.deleteBtn}>Deletar</p>
+                                <Link href={`/updateProduct/${product.id}`} className={styles.updateBtn}>Atualizar</Link>
+                            </td>
+                        </tr>
+                    ))
+                }
             </tbody>
+            <InfoToast toastIsOpen={toastIsOpen} text='Deletado' bg='red' />
         </table>
     )
 }

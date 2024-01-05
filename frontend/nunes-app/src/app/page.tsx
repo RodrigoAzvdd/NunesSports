@@ -7,7 +7,6 @@ export default function Home() {
     <section className={styles.section}>
       <h1 className={styles.title}>&quot;Produtos&quot;</h1>
       <ProductsTable />
-      <InfoToast toastIsOpen={true} text='TESTE' />
     </section>
   )
 }
