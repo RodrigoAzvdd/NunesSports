@@ -1,6 +1,29 @@
 const Product = require('../models/Product');
 
 module.exports = {
+    async getProduct(req, res) {
+        try {
+            const { productId } = req.params;
+            const product = await Product.findByPk(productId);
+
+            if (!product) {
+                return res.status(401).json({
+                    message: 'Nenhum produto econtrado.'
+                });
+            }
+
+            return res.status(200).json({
+                message: 'Produto localizado com sucesso.',
+                product: product
+            });
+        } catch (error) {
+            res.status(500).json({
+                message: 'Erro ao encontrar produtos.',
+                error: error
+            });
+        }
+    },
+
     async getProducts(req, res) {
         try {
             const allProducts = await Product.findAll();

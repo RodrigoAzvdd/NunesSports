@@ -1,3 +1,42 @@
-.title {
-    font-size: 2.5rem;
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    gap: 1rem;
+}
+
+.inputDiv {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+.btn {
+    border: 1px solid #8346ff;
+    border-radius: .3rem;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    background-color: #5311d8;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    background-color: #8346ff;
+    transform: scale(1.005);
+    box-shadow: 2px 2px 5px #bebebe;
+}
+
+.label {
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+.input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid #5311d8;
+    padding: .5rem;
+    font-size: 1.1rem;
 }
