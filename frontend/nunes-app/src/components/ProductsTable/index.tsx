@@ -3,6 +3,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import styles from './styles.module.css';
+import Link from 'next/link';
 
 interface Product {
     id: number,
@@ -60,7 +61,7 @@ export default function ProductsTable() {
                             <p onClick={() => {
                                 deleteProduct(product.id)
                             }} className={styles.deleteBtn}>Deletar</p>
-                            <p className={styles.updateBtn}>Atualizar</p>
+                            <Link href={`/updateProduct/${product.id}`} className={styles.updateBtn}>Atualizar</Link>
                         </td>
                     </tr>
                 ))}

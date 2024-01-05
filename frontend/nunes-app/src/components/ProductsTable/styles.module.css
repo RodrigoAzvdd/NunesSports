@@ -28,6 +28,7 @@
     cursor: pointer;
     padding: .5rem 1rem;
     transition: .3s;
+    text-decoration: none;
 }
 
 .deleteBtn:hover, .updateBtn:hover {

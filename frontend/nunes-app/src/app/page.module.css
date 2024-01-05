@@ -4,3 +4,11 @@
     flex-direction: column;
     align-items: center;
 }
+
+.title {
+    position: fixed;
+    right: 5%;
+    top: 5%;
+    color: #ae95f5;
+    text-transform: uppercase;
+}
