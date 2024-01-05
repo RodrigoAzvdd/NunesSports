@@ -1,0 +1,18 @@
+.main {
+    color: #fff;
+    font-weight: 600;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    padding: 1.5rem 4rem;
+    border-radius: .5rem;
+    font-size: 1rem;
+}
+
+.green {
+    background-color: #51d414;
+}
+
+.red {
+    background-color: #f10707;
+}

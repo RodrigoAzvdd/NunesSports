@@ -56,22 +56,21 @@ export default function ProductForm({ name, description, price, id, type }: {
         <form className={styles.form}>
             <div className={styles.inputDiv}>
                 <label className={styles.label} htmlFor="name">Nome:</label>
-                <input ref={nameInput} className={styles.input} autoComplete='off' type="text" name="name" id="name" defaultValue={name ? name : ''} />
+                <input ref={nameInput} className={styles.input} autoComplete='off' type="text" name="name" id="name" defaultValue={name ? name : ''} required />
             </div>
             <div className={styles.inputDiv}>
                 <label className={styles.label} htmlFor="name">Descrição:</label>
-                <input ref={descriptionInput} className={styles.input} autoComplete='off' type="text" name="name" id="name" defaultValue={description ? description : ''} />
+                <input ref={descriptionInput} className={styles.input} autoComplete='off' type="text" name="name" id="name" defaultValue={description ? description : ''} required />
             </div>
             <div className={styles.inputDiv}>
                 <label className={styles.label} htmlFor="name">Preço:</label>
-                <input ref={priceInput} className={styles.input} autoComplete='off' type="number" name="name" id="name" defaultValue={price ? price.toFixed(2) : ''} />
+                <input ref={priceInput} className={styles.input} autoComplete='off' type="number" name="name" id="name" min={1} defaultValue={price ? price.toFixed(2) : '1'} required />
             </div>
             {
                 type == "CREATE" ?
                     <button type='button' onClick={createProduct} className={styles.btn}>Cadastrar</button> :
                     <button type='button' onClick={updateProduct} className={styles.btn}>Atualizar</button>
             }
-
         </form>
     )
 }
