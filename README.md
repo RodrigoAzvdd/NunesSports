@@ -13,6 +13,7 @@ Este projeto foi desenvolvido como parte do Programa Best Minds 2024 - Pessoa De
 - **Frontend:**
   - Next.js - Framework React para renderização do lado do servidor.
   - TypeScript - Superset do JavaScript.
+  - CSS - Linguagem de estilo para estilizar componentes e layouts.
 
 ## Funcionalidades
 
