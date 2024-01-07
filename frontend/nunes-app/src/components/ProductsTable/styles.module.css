@@ -25,29 +25,36 @@
     gap: 1rem;
 }
 
-.deleteBtn, .updateBtn {
+.deleteBtn,
+.updateBtn {
     cursor: pointer;
     padding: .5rem 1rem;
     transition: .3s;
     text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    gap: .3rem;
+    align-items: center;
 }
 
-.deleteBtn:hover, .updateBtn:hover {
+.deleteBtn:hover,
+.updateBtn:hover {
     transform: scale(1.1);
 }
 
 .deleteBtn {
-    border: 1px solid #e41212;
+    color: #ffffff;
     background-color: #e41212;
+    border: 1px solid #e41212;
     border-radius: .3rem;
-    color: #fff;
+    font-size: 1rem;
 }
 
 .updateBtn {
-    border: 1px solid #8346ff;
+    color: #ffffff;
     background-color: #5d0dff;
+    border: 1px solid #5d0dff;
     border-radius: .3rem;
-    color: #fff;
 }
 
 .noItemSpan {

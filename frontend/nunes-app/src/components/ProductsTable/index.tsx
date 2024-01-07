@@ -6,6 +6,8 @@ import styles from './styles.module.css';
 import Link from 'next/link';
 import InfoToast from '../InfoToast';
 import CheckedModal from '../CheckedModal';
+import '../../../node_modules/bootstrap-icons/font/bootstrap-icons.json';
+import { Pencil, Trash } from 'react-bootstrap-icons';
 
 interface Product {
     id: number,
@@ -66,10 +68,12 @@ export default function ProductsTable() {
                             <td>{product.description}</td>
                             <td>R$ {product.price.toFixed(2)}</td>
                             <td className={styles.actions}>
-                                <p onClick={() => {
+
+                                <button type='button' onClick={() => {
                                     deleteProduct(product.id)
-                                }} className={styles.deleteBtn}>Deletar</p>
-                                <Link href={`/updateProduct/${product.id}`} className={styles.updateBtn}>Atualizar</Link>
+                                }} className={styles.deleteBtn}>Deletar <Trash size={17} /> </button>
+
+                                <Link href={`/updateProduct/${product.id}`} className={styles.updateBtn}>Atualizar <Pencil size={17} /></Link>
                             </td>
                         </tr>
                     ))

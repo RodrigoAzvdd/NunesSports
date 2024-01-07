@@ -3,7 +3,6 @@
 import { useRef, useState } from 'react';
 import styles from './styles.module.css';
 import axios from 'axios';
-import InfoToast from '../InfoToast';
 import CheckedModal from '../CheckedModal';
 
 export default function ProductForm({ name, description, price, id, type }: {
@@ -33,7 +32,7 @@ export default function ProductForm({ name, description, price, id, type }: {
             setToastIsOpen(true)
             setTimeout(() => {
                 setToastIsOpen(false)
-            }, 3000)
+            }, 1500)
         } catch (error) {
             console.error("Erro ao cadastrar produto:", error)
         }
