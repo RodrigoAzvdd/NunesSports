@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import Link from 'next/link';
 import InfoToast from '../InfoToast';
+import CheckedModal from '../CheckedModal';
 
 interface Product {
     id: number,
@@ -23,7 +24,7 @@ export default function ProductsTable() {
         setToastIsOpen(true)
         setTimeout(() => {
             setToastIsOpen(false)
-        }, 3000);
+        }, 1500);
         setProducts((prevProducts) =>
             prevProducts.filter((product) => product.id !== productId)
         );
@@ -74,7 +75,7 @@ export default function ProductsTable() {
                     ))
                 }
             </tbody>
-            <InfoToast toastIsOpen={toastIsOpen} text='Deletado' bg='red' />
+            <CheckedModal toastIsOpen={toastIsOpen} text='Deletado' />
         </table>
     )
 }

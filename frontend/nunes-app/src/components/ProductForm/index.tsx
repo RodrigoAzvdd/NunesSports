@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import styles from './styles.module.css';
 import axios from 'axios';
 import InfoToast from '../InfoToast';
+import CheckedModal from '../CheckedModal';
 
 export default function ProductForm({ name, description, price, id, type }: {
     id?: string,
@@ -51,7 +52,7 @@ export default function ProductForm({ name, description, price, id, type }: {
             setToastIsOpen(true)
             setTimeout(() => {
                 setToastIsOpen(false)
-            }, 3000)
+            }, 1500)
         } catch (error) {
             console.error("Erro ao atualizar produto:", error)
         }
@@ -109,8 +110,8 @@ export default function ProductForm({ name, description, price, id, type }: {
 
             {
                 type == 'CREATE' ?
-                    <InfoToast toastIsOpen={toastIsOpen} text='Cadastrado' bg='green' /> :
-                    <InfoToast toastIsOpen={toastIsOpen} text='Atualizado' bg='green' />
+                    <CheckedModal toastIsOpen={toastIsOpen} text='Cadastrado' /> :
+                    <CheckedModal toastIsOpen={toastIsOpen} text='Atualizado' />
             }
 
         </>
